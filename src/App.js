@@ -77,7 +77,7 @@ loadUser = (user) => {
 // When submit is clicked, send image URL to state, and call Clarifai API function
   onSubmit = () => {
     this.setState( { imageURL: this.state.input } );
-    fetch('http://localhost:3000/imageURL', {
+    fetch('https://cryptic-scrubland-92147.herokuapp.com/imageURL', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -87,7 +87,7 @@ loadUser = (user) => {
           .then(response => response.json())
           .then(response => {    
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://cryptic-scrubland-92147.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
